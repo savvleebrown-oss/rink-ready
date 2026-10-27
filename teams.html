@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hockey Teams &amp; Follows — Her Rink</title>
+  <meta name="description" content="Choose an NHL or PWHL team, discover official hockey accounts, and find welcoming ways to join the community.">
+  <style>
+    :root { --ink:#182b30; --paper:#f7faf9; --teal:#086761; --rose:#a93150; --line:#c7d9d5; --soft:#e7f1ee; --white:#fff; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:1rem/1.65 Arial, sans-serif; }
+    a { color:var(--teal); text-underline-offset:.2em; }
+    a:focus-visible { outline:3px solid var(--rose); outline-offset:4px; }
+    .skip { position:absolute; left:1rem; top:-5rem; padding:.5rem; background:var(--white); }
+    .skip:focus { top:1rem; }
+    .notice { margin:0; padding:1rem; background:var(--soft); font-size:.875rem; text-align:center; }
+    .wrap { width:min(100% - 2rem, 68rem); margin:auto; }
+    header { border-bottom:1px solid var(--line); }
+    .header { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; padding:1.25rem 0; }
+    .brand { font-size:1.75rem; font-weight:800; text-decoration:none; }
+    nav { display:flex; flex-wrap:wrap; gap:.35rem .75rem; }
+    nav a { padding:.5rem .25rem; font-weight:700; }
+    nav a[aria-current="page"] { color:var(--rose); text-decoration-thickness:3px; }
+    main { padding:3rem 0; }
+    h1,h2,h3 { line-height:1.2; overflow-wrap:break-word; }
+    h1 { font-size:2.75rem; margin:.5rem 0 1rem; }
+    h2 { font-size:1.65rem; margin:0 0 1rem; }
+    h3 { font-size:1.2rem; margin:0 0 .5rem; }
+    p { max-width:70ch; }
+    .eyebrow { color:var(--rose); font-weight:700; }
+    .lead { font-size:1.2rem; }
+    section { margin-top:3rem; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr)); gap:1.25rem; }
+    .card { padding:1.5rem; background:var(--white); border:1px solid var(--line); border-radius:8px; }
+    .card p:last-child { margin-bottom:0; }
+    li { margin:.5rem 0; }
+    footer { border-top:1px solid var(--line); }
+    .footer { padding:1.5rem 0; }
+    @media(max-width:40rem) { h1 { font-size:2rem; } main { padding:2rem 0; } .header { align-items:flex-start; flex-direction:column; } section { margin-top:2rem; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <p class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
+  <header>
+    <div class="wrap header">
+      <a class="brand" href="index.html">Her Rink</a>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="rules.html">Hockey Rules</a><a href="watch.html">Where to Watch</a><a href="teams.html" aria-current="page">Teams &amp; Follows</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="wrap">
+    <p class="eyebrow">Find a team. Keep your curiosity.</p>
+    <h1>Teams &amp; Follows</h1>
+    <p class="lead">Your favorite team does not need a complicated origin story. A city, a player, or a jersey you love is enough.</p>
+    <section aria-labelledby="choose">
+      <h2 id="choose">Three ways to choose</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Start with a place</h3>
+          <p>Try a team near your home, campus, or a city you love. Local coverage and nearby fans can make following the season easier.</p>
+        </article>
+        <article class="card">
+          <h3>Start with a player</h3>
+          <p>Watch highlights and interviews. A creative passer, fearless goalie, or leader with a story you connect to can become your reason to tune in.</p>
+        </article>
+        <article class="card">
+          <h3>Start with a game</h3>
+          <p>Watch two teams without choosing a side. Notice whose style draws you in. You can follow more than one team and change your mind.</p>
+        </article>
+      </div>
+    </section>
+    <section aria-labelledby="leagues">
+      <h2 id="leagues">Explore both leagues</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Meet NHL teams</h3>
+          <p>The NHL includes teams across the United States and Canada. Browse its official team directory for club websites, rosters, and schedules.</p>
+          <p>Try comparing one nearby team with one whose players interest you. You do not need to memorize the whole league.</p>
+          <a href="https://www.nhl.com/info/teams">Explore the NHL team directory</a>
+        </article>
+        <article class="card">
+          <h3>Discover the PWHL</h3>
+          <p>The PWHL showcases elite professional women’s hockey. Explore its current teams, player profiles, and highlights through the league’s official website.</p>
+          <p>Pay attention to the players’ stories as well as the scores. Following women athletes can make the sport feel more connected to your own interests.</p>
+          <a href="https://www.thepwhl.com/">Explore the PWHL</a>
+        </article>
+      </div>
+    </section>
+    <section aria-labelledby="feed">
+      <h2 id="feed">Build a hockey feed worth opening</h2>
+      <ul>
+        <li><strong>One league account:</strong> Use social links from the NHL or PWHL official website to find authentic announcements and highlights.</li>
+        <li><strong>One team account:</strong> Follow your chosen club for lineups, game updates, and behind-the-scenes moments.</li>
+        <li><strong>One player:</strong> Look for a profile linked by the player’s team or league rather than trusting a similar username.</li>
+        <li><strong>One thoughtful explainer:</strong> Choose a writer or creator who cites sources, explains mistakes, and welcomes beginner questions.</li>
+      </ul>
+      <p>League and team links above lead to real organizations. Her Rink is a fictional class project and is not affiliated with or endorsed by them.</p>
+    </section>
+    <section aria-labelledby="community">
+      <h2 id="community">A community should make room for you</h2>
+      <p>Look for fan groups with clear conduct rules and active moderation. You should be able to ask what icing means without being mocked. Leave spaces that gatekeep, harass, or pressure you to share personal information.</p>
+      <p>Interested in playing? Ask a local rink about adult beginner sessions, women’s programs, equipment requirements, and rental options. Availability and costs vary, so check before signing up.</p>
+      <p>Your next step can be small: <a href="watch.html">pick one game</a>, invite a friend, and see what catches your attention.</p>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap footer">
+      <p><strong>Her Rink</strong> · A place to begin, not a test to pass.</p>
+      <nav aria-label="Footer navigation">
+        <a href="index.html">Home</a><a href="rules.html">Hockey Rules</a><a href="watch.html">Where to Watch</a><a href="teams.html">Teams &amp; Follows</a>
+      </nav>
+    </div>
+    <p class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
+  </footer>
+</body>
+</html>
