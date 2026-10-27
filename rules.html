@@ -1,128 +1,539 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hockey Rules: NHL &amp; PWHL — Her Rink</title>
-  <meta name="description" content="Understand scoring, offsides, icing, penalties, and key NHL and PWHL differences in plain language.">
-  <style>
-    :root { --ink:#182b30; --paper:#f7faf9; --teal:#086761; --rose:#a93150; --line:#c7d9d5; --soft:#e7f1ee; --white:#fff; }
-    * { box-sizing:border-box; }
-    body { margin:0; background:var(--paper); color:var(--ink); font:1rem/1.65 Arial, sans-serif; }
-    a { color:var(--teal); text-underline-offset:.2em; }
-    a:focus-visible { outline:3px solid var(--rose); outline-offset:4px; }
-    .skip { position:absolute; left:1rem; top:-5rem; padding:.5rem; background:var(--white); }
-    .skip:focus { top:1rem; }
-    .notice { margin:0; padding:1rem; background:var(--soft); font-size:.875rem; text-align:center; }
-    .wrap { width:min(100% - 2rem, 68rem); margin:auto; }
-    header { border-bottom:1px solid var(--line); }
-    .header { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; padding:1.25rem 0; }
-    .brand { font-size:1.75rem; font-weight:800; text-decoration:none; }
-    nav { display:flex; flex-wrap:wrap; gap:.35rem .75rem; }
-    nav a { padding:.5rem .25rem; font-weight:700; }
-    nav a[aria-current="page"] { color:var(--rose); text-decoration-thickness:3px; }
-    main { padding:3rem 0; }
-    h1,h2,h3 { line-height:1.2; overflow-wrap:break-word; }
-    h1 { font-size:2.75rem; margin:.5rem 0 1rem; }
-    h2 { font-size:1.65rem; margin:0 0 1rem; }
-    h3 { font-size:1.2rem; margin:0 0 .5rem; }
-    p { max-width:70ch; }
-    .eyebrow { color:var(--rose); font-weight:700; }
-    .lead { font-size:1.2rem; }
-    section { margin-top:3rem; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr)); gap:1.25rem; }
-    .card { padding:1.5rem; background:var(--white); border:1px solid var(--line); border-radius:8px; }
-    .card p:last-child { margin-bottom:0; }
-    li { margin:.5rem 0; }
-    footer { border-top:1px solid var(--line); }
-    .footer { padding:1.5rem 0; }
-    @media(max-width:40rem) { h1 { font-size:2rem; } main { padding:2rem 0; } .header { align-items:flex-start; flex-direction:column; } section { margin-top:2rem; } }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The rules, in plain language — Rink Ready</title>
+<meta name="description" content="Offside, icing, penalties and positions explained for people watching their first hockey game, with a labelled rink diagram and a glossary.">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--ink:#0f1b26;--ink-2:#46565f;--ice:#f3f7f9;--paper:#ffffff;--line:#dbe4ea;--deep:#102a36;--accent:#b93a2b;--accent-dark:#93291d;--accent-2:#f8e8e4;--radius:16px;--wrap:70rem}
+html{-webkit-text-size-adjust:100%}
+body{display:flex;flex-direction:column;min-height:100vh;margin:0;background:var(--ice);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:clamp(1rem,.96rem + .2vw,1.0625rem);line-height:1.65}
+h1,h2,h3,h4{margin:0 0 .55em;line-height:1.12;letter-spacing:-.02em;font-weight:800}
+h1{font-size:clamp(2rem,1.4rem + 2.9vw,3.4rem);line-height:1.04}
+h2{font-size:clamp(1.45rem,1.2rem + 1.2vw,2.05rem)}
+h3{font-size:1.1rem;letter-spacing:-.01em}
+p{margin:0 0 1em}
+a{color:var(--accent);text-underline-offset:.18em}
+a:hover{color:var(--accent-dark)}
+img,svg{max-width:100%}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+main{flex:1}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:clamp(1.1rem,4vw,2.5rem)}
+.skip{position:absolute;left:-9999px;top:0;z-index:30;padding:.7rem 1rem;background:var(--paper);color:var(--ink);font-weight:700}
+.skip:focus{left:0}
+.notice{background:var(--deep);color:#e4eef3}
+.notice p{max-width:var(--wrap);margin:0 auto;padding:.62rem clamp(1.1rem,4vw,2.5rem);font-size:.76rem;line-height:1.5;letter-spacing:.01em;text-align:center}
+.masthead{background:var(--paper);border-bottom:1px solid var(--line)}
+.masthead .wrap{display:flex;flex-direction:column;gap:.85rem;padding-block:1rem}
+@media (min-width:52rem){.masthead .wrap{flex-direction:row;align-items:center;justify-content:space-between}}
+.brand{display:flex;align-items:center;gap:.7rem;color:inherit;text-decoration:none}
+.brand-mark{display:grid;place-items:center;flex:0 0 auto;width:2.4rem;height:2.4rem;border-radius:50%;background:var(--deep);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.08em}
+.brand-text{display:flex;flex-direction:column;line-height:1.15}
+.brand-name{font-size:.95rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.brand-tag{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
+.nav ul{display:flex;flex-wrap:wrap;gap:.35rem;margin:0;padding:0;list-style:none}
+.nav a{display:block;padding:.5rem .85rem;border:1px solid var(--line);border-radius:999px;background:#fbfdfe;color:var(--ink-2);font-size:.86rem;font-weight:600;text-decoration:none}
+.nav a:hover{background:var(--ice);border-color:#c2d0d9;color:var(--ink)}
+.nav a[aria-current="page"]{background:var(--deep);border-color:var(--deep);color:#fff}
+.hero{background:linear-gradient(180deg,#fff,var(--ice));border-bottom:1px solid var(--line);padding-block:clamp(2.1rem,5vw,3.8rem)}
+.hero .wrap{display:grid;gap:clamp(1.6rem,4vw,3rem);align-items:center}
+@media (min-width:56rem){.hero .wrap{grid-template-columns:1.12fr .88fr}}
+.hero-inner .wrap{display:block}
+.hero-inner h1{font-size:clamp(1.9rem,1.35rem + 2.3vw,2.9rem)}
+.eyebrow{margin:0 0 .9rem;font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.lede{max-width:46ch;font-size:clamp(1.04rem,1rem + .35vw,1.18rem);color:var(--ink-2)}
+.hero-inner .lede{max-width:64ch}
+.actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.6rem}
+.btn{display:inline-block;padding:.78rem 1.3rem;border:1px solid var(--accent);border-radius:999px;background:var(--accent);color:#fff;font-size:.93rem;font-weight:700;text-decoration:none}
+.btn:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}
+.btn.ghost{background:transparent;border-color:#bdcbd4;color:var(--ink)}
+.btn.ghost:hover{background:var(--paper);border-color:var(--ink-2);color:var(--ink)}
+.section{padding-block:clamp(2.1rem,4.5vw,3.4rem)}
+.section-head{max-width:60ch;margin-bottom:1.7rem}
+.section-head h2{margin-bottom:.4rem}
+.section-head p{margin:0;color:var(--ink-2)}
+.muted{color:var(--ink-2)}
+.meta{margin:0;font-size:.78rem;color:var(--ink-2)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(15.5rem,1fr));gap:1rem}
+.card{display:flex;flex-direction:column;padding:1.35rem;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius)}
+.card h3{margin-bottom:.35rem}
+.card p{font-size:.94rem;color:var(--ink-2)}
+.card-link{margin-top:auto;padding-top:.6rem;font-size:.88rem;font-weight:700;text-decoration:none}
+.card-link:hover{text-decoration:underline}
+.pill{display:inline-block;margin:0 0 .6rem;padding:.22rem .6rem;border-radius:999px;background:var(--accent-2);color:var(--accent-dark);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.briefs{display:grid;gap:1rem;margin:0;padding:0;list-style:none}
+.brief{padding:1.1rem 1.2rem;background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0}
+.brief h3{margin-bottom:.25rem;font-size:1rem}
+.brief p{margin:0 0 .4rem;font-size:.94rem;color:var(--ink-2)}
+.brief a{font-size:.88rem;font-weight:700}
+.facts{display:grid;gap:.85rem;margin:0}
+.facts div{padding:.9rem 1rem;background:var(--paper);border:1px solid var(--line);border-radius:12px}
+.facts dt{font-weight:800;font-size:.98rem}
+.facts dd{margin:.25rem 0 0;font-size:.92rem;color:var(--ink-2)}
+@media (min-width:48rem){.facts{grid-template-columns:repeat(2,1fr)}}
+.steps{display:grid;gap:.85rem;margin:0;padding:0;list-style:none;counter-reset:step}
+.steps li{counter-increment:step;position:relative;padding:1.05rem 1.2rem 1.05rem 3.2rem;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius)}
+.steps li::before{content:counter(step,decimal-leading-zero);position:absolute;left:1.15rem;top:1.02rem;font-size:.92rem;font-weight:800;color:var(--accent)}
+.steps strong{display:block;margin-bottom:.15rem}
+.steps span{font-size:.93rem;color:var(--ink-2)}
+.table-wrap{overflow-x:auto;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius)}
+table{width:100%;min-width:38rem;border-collapse:collapse;font-size:.92rem}
+caption{padding:.85rem 1rem;border-bottom:1px solid var(--line);color:var(--ink-2);font-size:.8rem;text-align:left}
+th,td{padding:.7rem 1rem;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:#f7fafb;color:var(--ink-2);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase}
+tbody tr:last-child td{border-bottom:0}
+td:first-child{font-weight:600}
+.jump{display:flex;flex-wrap:wrap;gap:.45rem;margin:1.5rem 0 0;padding:0;list-style:none}
+.jump a{display:block;padding:.4rem .75rem;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink-2);font-size:.8rem;font-weight:600;text-decoration:none}
+.jump a:hover{border-color:var(--ink-2);color:var(--ink)}
+.quote{margin:1.5rem 0 0;padding:1.3rem 1.5rem;background:var(--paper);border-left:4px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0;font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-style:italic;font-size:1.12rem;line-height:1.5}
+.quote p{margin:0}
+.quote footer{margin-top:.8rem;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-style:normal;font-size:.8rem;color:var(--ink-2)}
+.callout{padding:1.35rem;background:var(--accent-2);border:1px solid #eed3cc;border-radius:var(--radius)}
+.callout h2,.callout h3{color:#8d2a1e}
+.callout ul{margin:0;padding-left:1.1rem}
+.callout li{margin-bottom:.45rem;font-size:.94rem}
+.callout li:last-child{margin-bottom:0}
+.rink-figure{padding:1rem;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 20px 44px -34px rgba(16,42,54,.55)}
+figure{margin:0 0 1.5rem}
+figcaption{margin-top:.7rem;font-size:.78rem;color:var(--ink-2);text-align:center}
+.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1rem}
+.person{padding:1.2rem;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius)}
+.avatar{display:grid;place-items:center;width:2.6rem;height:2.6rem;margin:0 0 .75rem;border:1px solid var(--line);border-radius:50%;background:var(--ice);color:var(--deep);font-size:.82rem;font-weight:800}
+.person h3{margin-bottom:.1rem;font-size:1rem}
+.person .role{margin:0 0 .55rem;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.person p{margin:0;font-size:.92rem;color:var(--ink-2)}
+.site-footer{margin-top:auto;background:var(--deep);color:#c9dbe4}
+.site-footer .wrap{display:grid;gap:1.8rem;padding-block:clamp(2rem,4vw,3rem)}
+@media (min-width:52rem){.site-footer .wrap{grid-template-columns:1.3fr 1fr}}
+.site-footer h2{margin-bottom:.7rem;color:#fff;font-size:.72rem;letter-spacing:.18em}
+.site-footer p{margin:0 0 .7rem;font-size:.9rem;color:#b3c8d3}
+.site-footer a{color:#fff}
+.site-footer .brand-name{color:#fff}
+.site-footer .brand-tag{color:#9fb8c5}
+.footer-nav{display:grid;gap:.4rem;margin:0;padding:0;list-style:none;font-size:.92rem}
+.footer-nav a{text-decoration:none}
+.footer-nav a:hover{text-decoration:underline}
+.footer-notice{grid-column:1/-1;margin:0;padding-top:1.3rem;border-top:1px solid rgba(255,255,255,.18);font-size:.76rem;line-height:1.6;color:#a6bfcb}
+</style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <p class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
-  <header>
-    <div class="wrap header">
-      <a class="brand" href="index.html">Her Rink</a>
-      <nav aria-label="Main navigation">
-        <a href="index.html">Home</a><a href="rules.html" aria-current="page">Hockey Rules</a><a href="watch.html">Where to Watch</a><a href="teams.html">Teams &amp; Follows</a>
-      </nav>
-    </div>
-  </header>
-  <main id="main" class="wrap">
-    <p class="eyebrow">The game, without the guesswork.</p>
-    <h1>Hockey Rules: NHL &amp; PWHL</h1>
-    <p class="lead">The NHL is the National Hockey League. The PWHL is the Professional Women’s Hockey League. Both reward speed, skill, and teamwork.</p>
-    <section aria-labelledby="basics">
-      <h2 id="basics">Start with these six ideas</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>1. Score more goals</h3>
-          <p>A goal counts when the entire puck legally crosses the goal line inside the net. A team normally has five skaters and one goalie on the ice. Penalties and tactical decisions can change that lineup.</p>
-        </article>
-        <article class="card">
-          <h3>2. Three periods</h3>
-          <p>Regulation has three 20-minute periods. The clock stops when play stops, so a game takes longer than an hour. Intermissions give players a break and the rink crew time to resurface the ice.</p>
-        </article>
-        <article class="card">
-          <h3>3. Faceoffs restart play</h3>
-          <p>An official drops the puck between two opposing players. Their teammates line up nearby, ready to gain possession. Faceoffs start periods and restart play after many whistles.</p>
-        </article>
-        <article class="card">
-          <h3>4. Offsides protects the entry</h3>
-          <p>Generally, an attacking player cannot enter the offensive zone ahead of the puck. Watch the blue line: the puck needs to enter before the attacking teammates do. Officials judge entry using skate position.</p>
-        </article>
-        <article class="card">
-          <h3>5. Icing brings play back</h3>
-          <p>Icing generally happens when a team shoots the puck from behind the center red line beyond the opponent’s goal line without a touch. The next faceoff returns to the offending team’s end. Exceptions apply, including when a team is shorthanded.</p>
-        </article>
-        <article class="card">
-          <h3>6. Penalties change the numbers</h3>
-          <p>Tripping, hooking, and other illegal actions can send a player to the penalty box. A minor penalty usually lasts two minutes. The team with more skaters has a power play; the other team is on the penalty kill.</p>
-        </article>
-      </div>
-    </section>
-    <section aria-labelledby="compare">
-      <h2 id="compare">Same foundations, important differences</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>NHL overtime</h3>
-          <p>In the regular season, a tied game goes to five minutes of sudden-death overtime, normally with three skaters per team. If nobody scores, a shootout decides the winner.</p>
-          <p>In the playoffs, teams play repeated 20-minute overtime periods, normally five-on-five, until someone scores. There is no shootout.</p>
-        </article>
-        <article class="card">
-          <h3>PWHL overtime</h3>
-          <p>In the regular season, a tied game goes to seven minutes of sudden-death overtime, normally three-on-three, followed by a shootout if needed.</p>
-          <p>Playoff ties use repeated 20-minute overtime periods, normally five-on-five, rather than a shootout.</p>
-        </article>
-        <article class="card">
-          <h3>The PWHL’s jailbreak rule</h3>
-          <p>In the PWHL, a shorthanded goal can end the scoring team’s minor penalty early. In the NHL, scoring shorthanded does not end your own penalty.</p>
-          <p>In both leagues, a power-play goal generally ends the opponent’s minor penalty early. Major penalties work differently.</p>
-        </article>
-      </div>
-      <p>Both leagues allow physical play under their own rules. Not every collision is a penalty, and legal contact is not identical across leagues. Official rulebooks explain the exceptions and are the final authority.</p>
-    </section>
-    <section aria-labelledby="words">
-      <h2 id="words">Four words you will hear</h2>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="notice" role="note">
+  <p>This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">RR</span>
+      <span class="brand-text">
+        <span class="brand-name">Rink Ready</span>
+        <span class="brand-tag">Women's hockey, explained</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
       <ul>
-        <li><strong>Shift:</strong> One stretch of time a player spends on the ice before changing.</li>
-        <li><strong>Assist:</strong> Credit for helping create a goal; up to two players can receive one.</li>
-        <li><strong>Save:</strong> A goalie stops a shot that would otherwise enter the net.</li>
-        <li><strong>Pulling the goalie:</strong> Replacing the goalie with an extra skater, often while trailing late in a game.</li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rules.html" aria-current="page">Rules</a></li>
+        <li><a href="watch.html">Where to Watch</a></li>
+        <li><a href="teams.html">Teams &amp; Follows</a></li>
       </ul>
-      <p>Ready to put the rules into motion? <a href="watch.html">Find a game to watch.</a></p>
-    </section>
-  </main>
-  <footer>
-    <div class="wrap footer">
-      <p><strong>Her Rink</strong> · A place to begin, not a test to pass.</p>
-      <nav aria-label="Footer navigation">
-        <a href="index.html">Home</a><a href="rules.html">Hockey Rules</a><a href="watch.html">Where to Watch</a><a href="teams.html">Teams &amp; Follows</a>
-      </nav>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero hero-inner">
+    <div class="wrap">
+      <p class="eyebrow">The rules</p>
+      <h1>The game, in plain language.</h1>
+      <p class="lede">Every rule on this page is here because someone at a game turned to us and asked about it. Nothing assumes you have watched before. If you read one page on this site, read this one.</p>
+      <ul class="jump">
+        <li><a href="#basics">The basics</a></li>
+        <li><a href="#calls">Five confusing calls</a></li>
+        <li><a href="#diagram">The rink</a></li>
+        <li><a href="#positions">Who stands where</a></li>
+        <li><a href="#penalties">Penalties</a></li>
+        <li><a href="#glossary">Glossary</a></li>
+      </ul>
     </div>
-    <p class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
-  </footer>
+  </section>
+
+  <section class="section" id="basics">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>The game in sixty seconds</h2>
+        <p>If you only have a minute before the puck drops, this is the minute to spend.</p>
+      </div>
+      <p>Two teams, six players each: five skaters and a goaltender. They play three periods of twenty minutes, and the clock stops for every whistle, so a game takes about two and a half hours in the building even though only sixty minutes of hockey get played. The team with more goals at the end wins. If it is tied, they play a five-minute sudden-death overtime, and if that settles nothing, a shootout.</p>
+      <p>You score by putting a six-ounce rubber puck into a net that is four feet wide and six feet tall. That is a small target at speed, which is why most goals come from a scramble in front of it rather than a clean shot from distance. Players change on the fly, mid-play, in shifts of about forty-five seconds, which is why the bench always looks like a fire drill.</p>
+      <div class="facts">
+        <div>
+          <dt>Three periods</dt>
+          <dd>Twenty minutes each, with a seventeen-minute break between the second and third. Teams switch ends after the second period.</dd>
+        </div>
+        <div>
+          <dt>Six on six</dt>
+          <dd>Five skaters plus a goalie per side, with up to eighteen skaters dressed and available to rotate through the game.</dd>
+        </div>
+        <div>
+          <dt>The puck</dt>
+          <dd>One inch thick, six ounces, frozen before the game so it slides instead of bouncing. It travels faster than a car on the highway.</dd>
+        </div>
+        <div>
+          <dt>The net</dt>
+          <dd>Four feet wide by six feet tall, with a red frame and a mesh back. The goal counts only when the whole puck crosses the goal line.</dd>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="calls" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>The five calls that confuse everyone first</h2>
+        <p>These five account for almost every "wait, what just happened?" in a first season of watching.</p>
+      </div>
+      <dl class="facts">
+        <div>
+          <dt>Offside</dt>
+          <dd>The attacking team cannot enter the offensive zone before the puck does. If a player's skates are across the blue line while the puck is still outside it, play stops and the other team gets the puck outside the zone.</dd>
+        </div>
+        <div>
+          <dt>Icing</dt>
+          <dd>If a team shoots the puck from behind the center line all the way past the other team's goal line without anyone touching it, play comes back. It is a stalling rule: you cannot just fire the puck away to waste time.</dd>
+        </div>
+        <div>
+          <dt>Minor penalty</dt>
+          <dd>Most penalties are two minutes in the box. The penalized player sits, her team plays one skater short, and if the other team scores during those two minutes, the penalty ends early.</dd>
+        </div>
+        <div>
+          <dt>Power play</dt>
+          <dd>The five-on-four advantage a team gets while the other team is short-handed. Watch the passing speed up immediately — a good power play moves the puck faster than the penalty kill can chase it.</dd>
+        </div>
+        <div>
+          <dt>Goalie crease</dt>
+          <dd>The blue semicircle in front of the net. The goalie is protected inside it; an attacking player standing in it who interferes with a save will have a goal waved off.</dd>
+        </div>
+      </dl>
+      <blockquote class="quote">
+        <p>Offside is the rule that makes new fans feel stupid, and it is genuinely simple once you watch the blue line instead of the puck.</p>
+        <footer>Dani Okafor, rules editor</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="section" id="diagram" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>The rink, labelled</h2>
+        <p>An NHL-sized rink is 200 feet long and 85 feet wide. The one below is drawn to be understood, not to scale.</p>
+      </div>
+      <figure class="rink-figure">
+        <svg viewBox="0 0 300 164" role="img" aria-labelledby="rink-title-rules">
+          <title id="rink-title-rules">A hockey rink seen from above, showing the goal lines, blue lines, center line, face-off circles and creases</title>
+          <rect x="3" y="3" width="294" height="158" rx="36" fill="#eaf2f6" stroke="#0f1b26" stroke-width="2.5"/>
+          <line x1="150" y1="3" x2="150" y2="161" stroke="#b93a2b" stroke-width="2.5" stroke-dasharray="7 5"/>
+          <line x1="100" y1="3" x2="100" y2="161" stroke="#2f6fa8" stroke-width="3.5"/>
+          <line x1="200" y1="3" x2="200" y2="161" stroke="#2f6fa8" stroke-width="3.5"/>
+          <line x1="40" y1="3" x2="40" y2="161" stroke="#b93a2b" stroke-width="1.6"/>
+          <line x1="260" y1="3" x2="260" y2="161" stroke="#b93a2b" stroke-width="1.6"/>
+          <circle cx="150" cy="82" r="24" fill="none" stroke="#2f6fa8" stroke-width="1.6"/>
+          <circle cx="62" cy="52" r="17" fill="none" stroke="#b93a2b" stroke-width="1.6"/>
+          <circle cx="62" cy="112" r="17" fill="none" stroke="#b93a2b" stroke-width="1.6"/>
+          <circle cx="238" cy="52" r="17" fill="none" stroke="#b93a2b" stroke-width="1.6"/>
+          <circle cx="238" cy="112" r="17" fill="none" stroke="#b93a2b" stroke-width="1.6"/>
+          <path d="M4 64 A20 20 0 0 1 4 100 Z" fill="#d8e9f1" stroke="#2f6fa8" stroke-width="1.5"/>
+          <path d="M296 64 A20 20 0 0 0 296 100 Z" fill="#d8e9f1" stroke="#2f6fa8" stroke-width="1.5"/>
+          <rect x="10" y="74" width="7" height="16" rx="2" fill="#0f1b26"/>
+          <rect x="283" y="74" width="7" height="16" rx="2" fill="#0f1b26"/>
+          <g fill="#b93a2b">
+            <circle cx="62" cy="52" r="3.5"/>
+            <circle cx="62" cy="112" r="3.5"/>
+            <circle cx="238" cy="52" r="3.5"/>
+            <circle cx="238" cy="112" r="3.5"/>
+            <circle cx="150" cy="82" r="3.5"/>
+            <circle cx="150" cy="30" r="3"/>
+            <circle cx="150" cy="134" r="3"/>
+          </g>
+        </svg>
+        <figcaption>Red lines run across the ice; blue lines run across the ice; the goal line is the thin line inside the end zone. Everything here is a boundary for a rule.</figcaption>
+      </figure>
+      <dl class="facts">
+        <div>
+          <dt>Goal line</dt>
+          <dd>The thin red line the puck must fully cross for a goal. It sits eleven feet in from the end boards.</dd>
+        </div>
+        <div>
+          <dt>Blue line</dt>
+          <dd>Marks the edge of each team's offensive zone. All offside calls are decided at this line, which is why it is painted thick.</dd>
+        </div>
+        <div>
+          <dt>Center red line</dt>
+          <dd>Splits the ice in half. Icing is judged from here: a shot from behind it that crosses the far goal line can be called back.</dd>
+        </div>
+        <div>
+          <dt>Neutral zone</dt>
+          <dd>The strip of ice between the two blue lines. Most turnovers happen here, and most coaches stand exactly here too.</dd>
+        </div>
+        <div>
+          <dt>Face-off circle</dt>
+          <dd>Five circles, one center and four in the end zones. Play restarts with a face-off inside the circle nearest to where the whistle happened.</dd>
+        </div>
+        <div>
+          <dt>Goal crease</dt>
+          <dd>The blue semicircle in front of the net. It belongs to the goalie, and standing in it comes with consequences.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="positions" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Who stands where</h2>
+        <p>Six jobs on the ice, and one of them is allowed to fall over on purpose.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <p class="pill">Center</p>
+          <h3>The one in the middle</h3>
+          <p>Takes most face-offs, leads the forecheck, and is usually the first forward back into her own zone. Centers are often the playmakers: they touch the puck more than anyone else.</p>
+          <p class="meta">Watch for: a center slowing down before a pass to buy herself half a second.</p>
+        </article>
+        <article class="card">
+          <p class="pill">Wings</p>
+          <h3>The ones on the edges</h3>
+          <p>A left wing and a right wing, who patrol the boards and are expected to score. Their job is to get open, and then to be the first player in on the forecheck when the puck goes behind the net.</p>
+          <p class="meta">Watch for: a winger drifting into the slot, alone, waiting.</p>
+        </article>
+        <article class="card">
+          <p class="pill">Defense</p>
+          <h3>The ones who stay home</h3>
+          <p>Two per team, one on each side. They hold the blue line, block shots, and start the breakout. A good defender is usually the player quietly making the pass that led to the goal.</p>
+          <p class="meta">Watch for: a defender stepping up at the blue line to keep a play alive.</p>
+        </article>
+        <article class="card">
+          <p class="pill">Goaltender</p>
+          <h3>The one in the net</h3>
+          <p>Stops the puck, reads the play, and is the only player allowed to cover it with her hand in the crease. Goalies are also the loudest people on the ice, because they can see everything.</p>
+          <p class="meta">Watch for: a goalie tapping her stick to tell the team where the puck is going.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="penalties" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Penalties, and how long you sit</h2>
+        <p>The referee raises an arm to signal a delayed penalty, and blows the whistle when the offending team touches the puck. Then somebody sits down.</p>
+      </div>
+      <p class="meta" style="margin-bottom:.6rem">Scroll the table sideways on a phone.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>Standard calls in the women's game.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Call</th>
+              <th scope="col">Time</th>
+              <th scope="col">What actually happened</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tripping</td>
+              <td>2 minutes</td>
+              <td>A stick, knee or skate takes out an opponent's legs. Often accidental, always called.</td>
+            </tr>
+            <tr>
+              <td>Hooking</td>
+              <td>2 minutes</td>
+              <td>A stick pulls an opponent back or spins her around. If it stopped a scoring chance, it can be a penalty shot instead.</td>
+            </tr>
+            <tr>
+              <td>Slashing</td>
+              <td>2 minutes</td>
+              <td>A swing of the stick at an opponent's hands, arms or body. Referees call it by the sound as much as the sight.</td>
+            </tr>
+            <tr>
+              <td>High-sticking</td>
+              <td>2 or 4 minutes</td>
+              <td>The stick above shoulder height makes contact. Four minutes if it draws blood.</td>
+            </tr>
+            <tr>
+              <td>Interference</td>
+              <td>2 minutes</td>
+              <td>Hitting or blocking a player who does not have the puck. You may skate through a lane; you may not take the player out of it.</td>
+            </tr>
+            <tr>
+              <td>Body checking</td>
+              <td>2 minutes</td>
+              <td>In the women's game, delivering a check is not allowed. Contact is part of the sport; a full check is not.</td>
+            </tr>
+            <tr>
+              <td>Roughing</td>
+              <td>2 minutes</td>
+              <td>Post-whistle pushing that goes past shoving. Both teams usually get one.</td>
+            </tr>
+            <tr>
+              <td>Delay of game</td>
+              <td>2 minutes</td>
+              <td>Most often shooting the puck out of play on purpose, or knocking a net off its pegs.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="meta" style="margin-top:.9rem">A major penalty is five minutes and does not end early if the other team scores. A misconduct is ten minutes and does not leave the team short-handed.</p>
+    </div>
+  </section>
+
+  <section class="section" id="scoring" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Why a win is worth two points</h2>
+        <p>Standings in hockey do not count wins alone, which is why a record like 8-2-1-0 makes sense to a coach and nobody else.</p>
+      </div>
+      <p>A regulation win is two points and a regulation loss is zero. Lose in overtime or a shootout and you still get one point, because you forced the game past sixty minutes. Win in overtime or a shootout and you get two, but the game is recorded in a separate column. That is what the four numbers mean: wins, regulation losses, overtime losses and shootout losses.</p>
+      <div class="facts">
+        <div>
+          <dt>Regulation win</dt>
+          <dd>Two points. The cleanest result on the table and the one coaches talk about all season.</dd>
+        </div>
+        <div>
+          <dt>Overtime or shootout loss</dt>
+          <dd>One point. Frustrating in the room, useful in March.</dd>
+        </div>
+        <div>
+          <dt>Regulation loss</dt>
+          <dd>Zero points. Sixteen of these and a club starts having conversations about next year.</dd>
+        </div>
+        <div>
+          <dt>Goal differential</dt>
+          <dd>Goals scored minus goals allowed. It is the tiebreaker nobody explains until the last week of the season.</dd>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="callout">
+        <h2>Five things people get wrong</h2>
+        <ul>
+          <li>You can stop the puck with your skate and even redirect it, but you cannot kick it into the net on purpose.</li>
+          <li>A player is not offside if the puck is already in the zone, no matter where her skates are.</li>
+          <li>Icing is waved off if the other team could have played the puck before it crossed the goal line.</li>
+          <li>Hand passes are legal in your own defensive zone and illegal everywhere else.</li>
+          <li>Pulling the goalie is not a penalty or a surrender. It is a coach trading the net for a sixth skater when she needs a goal.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="glossary" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Glossary</h2>
+        <p>Ten words you will hear in the first period. Keep this open in another tab during a broadcast.</p>
+      </div>
+      <dl class="facts">
+        <div>
+          <dt>Backcheck</dt>
+          <dd>Skating back toward your own net to defend, usually right after a turnover.</dd>
+        </div>
+        <div>
+          <dt>Forecheck</dt>
+          <dd>Pressuring the other team in their own zone, trying to force a mistake before they get out.</dd>
+        </div>
+        <div>
+          <dt>Breakout</dt>
+          <dd>The sequence a team uses to move the puck out of its own zone. Coaches draw these on whiteboards for a living.</dd>
+        </div>
+        <div>
+          <dt>Slot</dt>
+          <dd>The patch of ice between the face-off circles, in front of the net. Where goals come from.</dd>
+        </div>
+        <div>
+          <dt>Deke</dt>
+          <dd>A fake with the body or stick that makes a defender commit one way while the puck goes the other.</dd>
+        </div>
+        <div>
+          <dt>Five-hole</dt>
+          <dd>The gap between a goalie's pads. Useful to know because everyone behind you will yell it.</dd>
+        </div>
+        <div>
+          <dt>Top shelf</dt>
+          <dd>A shot into the upper corner of the net, above the goalie's shoulder. The crowd noise is different for these.</dd>
+        </div>
+        <div>
+          <dt>Power play</dt>
+          <dd>The five-on-four advantage after an opposing penalty. Also called the man advantage.</dd>
+        </div>
+        <div>
+          <dt>Penalty kill</dt>
+          <dd>The short-handed unit that tries to survive those two minutes without giving up a goal.</dd>
+        </div>
+        <div>
+          <dt>Hat trick</dt>
+          <dd>Three goals by one player in a game. In most buildings, the hats end up on the ice.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Where to go next</h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>Now go watch a game</h3>
+          <p>Three ways to watch, what they cost, and a November calendar with eight games on it.</p>
+          <a class="card-link" href="watch.html">Where to watch</a>
+        </article>
+        <article class="card">
+          <h3>Or pick a team</h3>
+          <p>Six clubs, three players worth following, and a five-minute weekly routine.</p>
+          <a class="card-link" href="teams.html">Teams &amp; follows</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">RR</span>
+        <span class="brand-text">
+          <span class="brand-name">Rink Ready</span>
+          <span class="brand-tag">Women's hockey, explained</span>
+        </span>
+      </a>
+      <p>A free, volunteer-run guide to the women's game. No advertising from teams or leagues, and we don't sell your email address to anyone.</p>
+      <p>Questions, corrections, or a rule we got wrong? Write to <a href="mailto:hello@rinkready.example">hello@rinkready.example</a>.</p>
+    </div>
+    <div>
+      <h2>Pages</h2>
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rules.html">The rules, in plain language</a></li>
+        <li><a href="watch.html">Where to watch</a></li>
+        <li><a href="teams.html">Teams &amp; follows</a></li>
+      </ul>
+    </div>
+    <p class="footer-notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
+  </div>
+</footer>
+
 </body>
 </html>
