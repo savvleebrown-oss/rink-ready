@@ -1,1 +1,1 @@
-# her-rink
+# rink-ready
