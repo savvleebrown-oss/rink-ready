@@ -1,115 +1,426 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Where to Watch Hockey — Her Rink</title>
-  <meta name="description" content="Find official NHL and PWHL viewing information and practical tips for your first hockey game.">
-  <style>
-    :root { --ink:#182b30; --paper:#f7faf9; --teal:#086761; --rose:#a93150; --line:#c7d9d5; --soft:#e7f1ee; --white:#fff; }
-    * { box-sizing:border-box; }
-    body { margin:0; background:var(--paper); color:var(--ink); font:1rem/1.65 Arial, sans-serif; }
-    a { color:var(--teal); text-underline-offset:.2em; }
-    a:focus-visible { outline:3px solid var(--rose); outline-offset:4px; }
-    .skip { position:absolute; left:1rem; top:-5rem; padding:.5rem; background:var(--white); }
-    .skip:focus { top:1rem; }
-    .notice { margin:0; padding:1rem; background:var(--soft); font-size:.875rem; text-align:center; }
-    .wrap { width:min(100% - 2rem, 68rem); margin:auto; }
-    header { border-bottom:1px solid var(--line); }
-    .header { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; padding:1.25rem 0; }
-    .brand { font-size:1.75rem; font-weight:800; text-decoration:none; }
-    nav { display:flex; flex-wrap:wrap; gap:.35rem .75rem; }
-    nav a { padding:.5rem .25rem; font-weight:700; }
-    nav a[aria-current="page"] { color:var(--rose); text-decoration-thickness:3px; }
-    main { padding:3rem 0; }
-    h1,h2,h3 { line-height:1.2; overflow-wrap:break-word; }
-    h1 { font-size:2.75rem; margin:.5rem 0 1rem; }
-    h2 { font-size:1.65rem; margin:0 0 1rem; }
-    h3 { font-size:1.2rem; margin:0 0 .5rem; }
-    p { max-width:70ch; }
-    .eyebrow { color:var(--rose); font-weight:700; }
-    .lead { font-size:1.2rem; }
-    section { margin-top:3rem; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr)); gap:1.25rem; }
-    .card { padding:1.5rem; background:var(--white); border:1px solid var(--line); border-radius:8px; }
-    .card p:last-child { margin-bottom:0; }
-    li { margin:.5rem 0; }
-    footer { border-top:1px solid var(--line); }
-    .footer { padding:1.5rem 0; }
-    @media(max-width:40rem) { h1 { font-size:2rem; } main { padding:2rem 0; } .header { align-items:flex-start; flex-direction:column; } section { margin-top:2rem; } }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where to watch — Rink Ready</title>
+<meta name="description" content="Three ways to watch women's ice hockey — in person, streaming or at a watch party — what each costs, and how to follow a game while you are still learning.">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--ink:#0f1b26;--ink-2:#46565f;--ice:#f3f7f9;--paper:#ffffff;--line:#dbe4ea;--deep:#102a36;--accent:#b93a2b;--accent-dark:#93291d;--accent-2:#f8e8e4;--radius:16px;--wrap:70rem}
+html{-webkit-text-size-adjust:100%}
+body{display:flex;flex-direction:column;min-height:100vh;margin:0;background:var(--ice);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:clamp(1rem,.96rem + .2vw,1.0625rem);line-height:1.65}
+h1,h2,h3,h4{margin:0 0 .55em;line-height:1.12;letter-spacing:-.02em;font-weight:800}
+h1{font-size:clamp(2rem,1.4rem + 2.9vw,3.4rem);line-height:1.04}
+h2{font-size:clamp(1.45rem,1.2rem + 1.2vw,2.05rem)}
+h3{font-size:1.1rem;letter-spacing:-.01em}
+p{margin:0 0 1em}
+a{color:var(--accent);text-underline-offset:.18em}
+a:hover{color:var(--accent-dark)}
+img,svg{max-width:100%}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+main{flex:1}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:clamp(1.1rem,4vw,2.5rem)}
+.skip{position:absolute;left:-9999px;top:0;z-index:30;padding:.7rem 1rem;background:var(--paper);color:var(--ink);font-weight:700}
+.skip:focus{left:0}
+.notice{background:var(--deep);color:#e4eef3}
+.notice p{max-width:var(--wrap);margin:0 auto;padding:.62rem clamp(1.1rem,4vw,2.5rem);font-size:.76rem;line-height:1.5;letter-spacing:.01em;text-align:center}
+.masthead{background:var(--paper);border-bottom:1px solid var(--line)}
+.masthead .wrap{display:flex;flex-direction:column;gap:.85rem;padding-block:1rem}
+@media (min-width:52rem){.masthead .wrap{flex-direction:row;align-items:center;justify-content:space-between}}
+.brand{display:flex;align-items:center;gap:.7rem;color:inherit;text-decoration:none}
+.brand-mark{display:grid;place-items:center;flex:0 0 auto;width:2.4rem;height:2.4rem;border-radius:50%;background:var(--deep);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.08em}
+.brand-text{display:flex;flex-direction:column;line-height:1.15}
+.brand-name{font-size:.95rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.brand-tag{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
+.nav ul{display:flex;flex-wrap:wrap;gap:.35rem;margin:0;padding:0;list-style:none}
+.nav a{display:block;padding:.5rem .85rem;border:1px solid var(--line);border-radius:999px;background:#fbfdfe;color:var(--ink-2);font-size:.86rem;font-weight:600;text-decoration:none}
+.nav a:hover{background:var(--ice);border-color:#c2d0d9;color:var(--ink)}
+.nav a[aria-current="page"]{background:var(--deep);border-color:var(--deep);color:#fff}
+.hero{background:linear-gradient(180deg,#fff,var(--ice));border-bottom:1px solid var(--line);padding-block:clamp(2.1rem,5vw,3.8rem)}
+.hero .wrap{display:grid;gap:clamp(1.6rem,4vw,3rem);align-items:center}
+@media (min-width:56rem){.hero .wrap{grid-template-columns:1.12fr .88fr}}
+.hero-inner .wrap{display:block}
+.hero-inner h1{font-size:clamp(1.9rem,1.35rem + 2.3vw,2.9rem)}
+.eyebrow{margin:0 0 .9rem;font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.lede{max-width:46ch;font-size:clamp(1.04rem,1rem + .35vw,1.18rem);color:var(--ink-2)}
+.hero-inner .lede{max-width:64ch}
+.actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.6rem}
+.btn{display:inline-block;padding:.78rem 1.3rem;border:1px solid var(--accent);border-radius:999px;background:var(--accent);color:#fff;font-size:.93rem;font-weight:700;text-decoration:none}
+.btn:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}
+.btn.ghost{background:transparent;border-color:#bdcbd4;color:var(--ink)}
+.btn.ghost:hover{background:var(--paper);border-color:var(--ink-2);color:var(--ink)}
+.section{padding-block:clamp(2.1rem,4.5vw,3.4rem)}
+.section-head{max-width:60ch;margin-bottom:1.7rem}
+.section-head h2{margin-bottom:.4rem}
+.section-head p{margin:0;color:var(--ink-2)}
+.muted{color:var(--ink-2)}
+.meta{margin:0;font-size:.78rem;color:var(--ink-2)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(15.5rem,1fr));gap:1rem}
+.card{display:flex;flex-direction:column;padding:1.35rem;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius)}
+.card h3{margin-bottom:.35rem}
+.card p{font-size:.94rem;color:var(--ink-2)}
+.card-link{margin-top:auto;padding-top:.6rem;font-size:.88rem;font-weight:700;text-decoration:none}
+.card-link:hover{text-decoration:underline}
+.pill{display:inline-block;margin:0 0 .6rem;padding:.22rem .6rem;border-radius:999px;background:var(--accent-2);color:var(--accent-dark);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.briefs{display:grid;gap:1rem;margin:0;padding:0;list-style:none}
+.brief{padding:1.1rem 1.2rem;background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0}
+.brief h3{margin-bottom:.25rem;font-size:1rem}
+.brief p{margin:0 0 .4rem;font-size:.94rem;color:var(--ink-2)}
+.brief a{font-size:.88rem;font-weight:700}
+.facts{display:grid;gap:.85rem;margin:0}
+.facts div{padding:.9rem 1rem;background:var(--paper);border:1px solid var(--line);border-radius:12px}
+.facts dt{font-weight:800;font-size:.98rem}
+.facts dd{margin:.25rem 0 0;font-size:.92rem;color:var(--ink-2)}
+@media (min-width:48rem){.facts{grid-template-columns:repeat(2,1fr)}}
+.steps{display:grid;gap:.85rem;margin:0;padding:0;list-style:none;counter-reset:step}
+.steps li{counter-increment:step;position:relative;padding:1.05rem 1.2rem 1.05rem 3.2rem;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius)}
+.steps li::before{content:counter(step,decimal-leading-zero);position:absolute;left:1.15rem;top:1.02rem;font-size:.92rem;font-weight:800;color:var(--accent)}
+.steps strong{display:block;margin-bottom:.15rem}
+.steps span{font-size:.93rem;color:var(--ink-2)}
+.table-wrap{overflow-x:auto;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius)}
+table{width:100%;min-width:38rem;border-collapse:collapse;font-size:.92rem}
+caption{padding:.85rem 1rem;border-bottom:1px solid var(--line);color:var(--ink-2);font-size:.8rem;text-align:left}
+th,td{padding:.7rem 1rem;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:#f7fafb;color:var(--ink-2);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase}
+tbody tr:last-child td{border-bottom:0}
+td:first-child{font-weight:600}
+.jump{display:flex;flex-wrap:wrap;gap:.45rem;margin:1.5rem 0 0;padding:0;list-style:none}
+.jump a{display:block;padding:.4rem .75rem;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink-2);font-size:.8rem;font-weight:600;text-decoration:none}
+.jump a:hover{border-color:var(--ink-2);color:var(--ink)}
+.quote{margin:1.5rem 0 0;padding:1.3rem 1.5rem;background:var(--paper);border-left:4px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0;font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-style:italic;font-size:1.12rem;line-height:1.5}
+.quote p{margin:0}
+.quote footer{margin-top:.8rem;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-style:normal;font-size:.8rem;color:var(--ink-2)}
+.callout{padding:1.35rem;background:var(--accent-2);border:1px solid #eed3cc;border-radius:var(--radius)}
+.callout h2,.callout h3{color:#8d2a1e}
+.callout ul{margin:0;padding-left:1.1rem}
+.callout li{margin-bottom:.45rem;font-size:.94rem}
+.callout li:last-child{margin-bottom:0}
+.rink-figure{padding:1rem;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 20px 44px -34px rgba(16,42,54,.55)}
+figure{margin:0 0 1.5rem}
+figcaption{margin-top:.7rem;font-size:.78rem;color:var(--ink-2);text-align:center}
+.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1rem}
+.person{padding:1.2rem;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius)}
+.avatar{display:grid;place-items:center;width:2.6rem;height:2.6rem;margin:0 0 .75rem;border:1px solid var(--line);border-radius:50%;background:var(--ice);color:var(--deep);font-size:.82rem;font-weight:800}
+.person h3{margin-bottom:.1rem;font-size:1rem}
+.person .role{margin:0 0 .55rem;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.person p{margin:0;font-size:.92rem;color:var(--ink-2)}
+.site-footer{margin-top:auto;background:var(--deep);color:#c9dbe4}
+.site-footer .wrap{display:grid;gap:1.8rem;padding-block:clamp(2rem,4vw,3rem)}
+@media (min-width:52rem){.site-footer .wrap{grid-template-columns:1.3fr 1fr}}
+.site-footer h2{margin-bottom:.7rem;color:#fff;font-size:.72rem;letter-spacing:.18em}
+.site-footer p{margin:0 0 .7rem;font-size:.9rem;color:#b3c8d3}
+.site-footer a{color:#fff}
+.site-footer .brand-name{color:#fff}
+.site-footer .brand-tag{color:#9fb8c5}
+.footer-nav{display:grid;gap:.4rem;margin:0;padding:0;list-style:none;font-size:.92rem}
+.footer-nav a{text-decoration:none}
+.footer-nav a:hover{text-decoration:underline}
+.footer-notice{grid-column:1/-1;margin:0;padding-top:1.3rem;border-top:1px solid rgba(255,255,255,.18);font-size:.76rem;line-height:1.6;color:#a6bfcb}
+</style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <p class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
-  <header>
-    <div class="wrap header">
-      <a class="brand" href="index.html">Her Rink</a>
-      <nav aria-label="Main navigation">
-        <a href="index.html">Home</a><a href="rules.html">Hockey Rules</a><a href="watch.html" aria-current="page">Where to Watch</a><a href="teams.html">Teams &amp; Follows</a>
-      </nav>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="notice" role="note">
+  <p>This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">RR</span>
+      <span class="brand-text">
+        <span class="brand-name">Rink Ready</span>
+        <span class="brand-tag">Women's hockey, explained</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rules.html">Rules</a></li>
+        <li><a href="watch.html" aria-current="page">Where to Watch</a></li>
+        <li><a href="teams.html">Teams &amp; Follows</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero hero-inner">
+    <div class="wrap">
+      <p class="eyebrow">Where to watch</p>
+      <h1>Three ways to watch, sorted by effort.</h1>
+      <p class="lede">You do not need a cable package, and you do not have to commit to a season. Almost all the hockey a new fan can watch is either local, free, or costs about as much as a takeout dinner.</p>
+      <ul class="jump">
+        <li><a href="#options">The three options</a></li>
+        <li><a href="#costs">What each costs</a></li>
+        <li><a href="#how">How to watch</a></li>
+        <li><a href="#calendar">November calendar</a></li>
+      </ul>
     </div>
-  </header>
-  <main id="main" class="wrap">
-    <p class="eyebrow">Your next game night starts here.</p>
-    <h1>Where to Watch</h1>
-    <p class="lead">On the couch, with friends, or at the rink: choose the way to watch that fits you.</p>
-    <p>Broadcast rights depend on your country, location, and the specific game. Check the official listing before paying for a service; one subscription does not necessarily include every game.</p>
-    <section aria-labelledby="find">
-      <h2 id="find">Find the right broadcast</h2>
-      <div class="grid">
+  </section>
+
+  <section class="section" id="options">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Pick the one that fits your week</h2>
+        <p>None of these is the "right" way in. The best first game is the one you can actually get to.</p>
+      </div>
+      <div class="cards">
         <article class="card">
-          <h3>NHL games</h3>
-          <p>Start with the NHL’s official schedule. Find your matchup, check the listed television or streaming provider, and confirm availability in your area.</p>
-          <p>National and local games may use different services. An out-of-market package may exclude your local team because of regional blackout rules.</p>
-          <a href="https://www.nhl.com/schedule">Visit the official NHL schedule</a>
+          <p class="pill">In person</p>
+          <h3>Go to a rink</h3>
+          <p>Cedar Hollow Ice Barn and Riverside Twin Rinks both host midweek league games. Tickets run between nine and sixteen dollars at the door, the building seats under two thousand people, and the sound of skates on ice arrives before you find your seat.</p>
+          <p>Rinks are cold. Bring a coat, not a jacket. Sit on the side the players shoot toward twice, and you will see more goals.</p>
+          <p class="meta">Doors open 45 minutes before the puck drops.</p>
         </article>
         <article class="card">
-          <h3>PWHL games</h3>
-          <p>Visit the PWHL’s official website for its schedule and current viewing announcements. The available channel or stream can differ by country and game.</p>
-          <p>Follow links published by the league or team rather than assuming an unofficial stream is safe or authorized.</p>
-          <a href="https://www.thepwhl.com/">Visit the official PWHL website</a>
+          <p class="pill">Streaming</p>
+          <h3>Watch on a laptop</h3>
+          <p>Puckline carries every Northern Lights league game live for seven dollars a month, with replays available for a week. Icebox TV carries college and tournament hockey and has a free tier with ads if you want to try the sport out before paying for anything.</p>
+          <p>If you are watching alone, turn the commentary down for one period and just listen to the rink. It is a different game.</p>
+          <p class="meta">Puckline has a week-long replay window; local games are blacked out live on the cheapest plan.</p>
         </article>
         <article class="card">
-          <h3>Hockey close to home</h3>
-          <p>College, minor-league, junior, and community hockey can bring the action closer to you. Look up a nearby team’s official schedule and ticket information.</p>
-          <p>Compare the total cost, including fees, transportation, and parking. A smaller arena can still deliver a memorable night.</p>
+          <p class="pill">Watch party</p>
+          <h3>Find a room full of people</h3>
+          <p>The Blue Line Diner on Third shows the Friday game with the sound on and a printed roster on every table. Order the soup, sit near the back, and the table of regulars will explain any call you ask about — they have been waiting all week for someone to ask.</p>
+          <p class="meta">One screen, one game, and the good seats go by six.</p>
         </article>
       </div>
-    </section>
-    <section aria-labelledby="check">
-      <h2 id="check">Before you press play</h2>
-      <ol>
-        <li><strong>Pick the matchup.</strong> Choose a game with a team or player you are curious about.</li>
-        <li><strong>Check the time zone.</strong> The advertised puck-drop time may not be your local time.</li>
-        <li><strong>Confirm access.</strong> Read the provider’s game listing and blackout information before subscribing.</li>
-        <li><strong>Settle in early.</strong> Pregame coverage can introduce players and explain what is at stake.</li>
-      </ol>
-    </section>
-    <section aria-labelledby="arena">
-      <h2 id="arena">Your first arena visit</h2>
-      <ul>
-        <li><strong>Bring a layer.</strong> Indoor rinks can feel cool even when it is warm outside.</li>
-        <li><strong>Read the venue policy.</strong> Bag limits, ticket rules, and accessibility arrangements vary.</li>
-        <li><strong>Arrive with time to spare.</strong> Find your entrance and seat before the opening faceoff.</li>
-        <li><strong>Wait for a stoppage.</strong> Follow ushers’ directions when entering your row so you do not block live play.</li>
-        <li><strong>Enjoy it your way.</strong> Cheer, listen, or ask a friend what just happened. Nobody starts as an expert.</li>
-      </ul>
-    </section>
-    <section aria-labelledby="follow">
-      <h2 id="follow">If the puck feels impossible to follow</h2>
-      <p>Look at the player carrying it and the direction teammates are moving. The camera, players’ sticks, and the crowd’s reaction give you clues. Replays help connect the action to the rules.</p>
-      <p>Want a team to root for? <a href="teams.html">Explore teams and follows.</a></p>
-    </section>
-  </main>
-  <footer>
-    <div class="wrap footer">
-      <p><strong>Her Rink</strong> · A place to begin, not a test to pass.</p>
-      <nav aria-label="Footer navigation">
-        <a href="index.html">Home</a><a href="rules.html">Hockey Rules</a><a href="watch.html">Where to Watch</a><a href="teams.html">Teams &amp; Follows</a>
-      </nav>
     </div>
-    <p class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
-  </footer>
+  </section>
+
+  <section class="section" id="costs" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What each one actually costs you</h2>
+        <p>Money is only half of it. The other half is how much of your evening disappears.</p>
+      </div>
+      <p class="meta" style="margin-bottom:.6rem">Scroll the table sideways on a phone.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>Prices are adult general admission at the door.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Option</th>
+              <th scope="col">Cost</th>
+              <th scope="col">Best for</th>
+              <th scope="col">The catch</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>In person, at a rink</td>
+              <td>$9 to $16 a ticket</td>
+              <td>Understanding how fast the game really is</td>
+              <td>Cold arenas, limited food, no replays, and a drive home</td>
+            </tr>
+            <tr>
+              <td>Puckline streaming</td>
+              <td>$7 a month</td>
+              <td>Watching whenever your evening allows</td>
+              <td>Replays disappear after a week, and local games are blacked out live</td>
+            </tr>
+            <tr>
+              <td>Icebox TV free tier</td>
+              <td>Free with ads</td>
+              <td>Trying hockey with no commitment at all</td>
+              <td>College and tournament games only, and a lot of commercials</td>
+            </tr>
+            <tr>
+              <td>Watch party at the diner</td>
+              <td>The price of a sandwich</td>
+              <td>Asking questions out loud</td>
+              <td>One game on one screen, and the good seats fill early</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How to watch when you are still learning</h2>
+        <p>Five things that make a first season far less baffling than watching the puck for sixty minutes.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <strong>Pick one player and follow only her for a shift.</strong>
+          <span>About forty-five seconds. You will learn more about the shape of the game in one shift than in a whole period of chasing the puck.</span>
+        </li>
+        <li>
+          <strong>Watch the defender on the far side of the puck.</strong>
+          <span>She is usually the player telling you where the play is about to go, because she has to cover the pass nobody has made yet.</span>
+        </li>
+        <li>
+          <strong>Learn the two sounds.</strong>
+          <span>A stick hitting the ice is a pass or a shot; the crowd's sudden quiet "ohh" is a near miss. After a period you will hear the difference without looking up.</span>
+        </li>
+        <li>
+          <strong>Ignore the scoreboard for one period.</strong>
+          <span>Count completed passes instead. Hockey is mostly a passing game interrupted by whistles, and the score tells you almost nothing about who is playing well.</span>
+        </li>
+        <li>
+          <strong>Keep the rules page open in another tab.</strong>
+          <span>For weeks, offside and icing will be the only two calls you need. Both are explained in one paragraph each on our rules page.</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="callout">
+        <h3>If you are watching on a phone</h3>
+        <ul>
+          <li>Turn the screen sideways. Landscape is the difference between following a play and guessing at it.</li>
+          <li>Leave the commentary on for your first few games. It is repetitive on purpose, and the repetition is how the vocabulary sticks.</li>
+          <li>Use the stream's own replay button when a goal happens. A live goal is genuinely hard to read the first time.</li>
+          <li>Do not try to watch while doing something else. Hockey rewards attention in short bursts — watch a shift, look away, come back.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="calendar" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Our November viewing calendar</h2>
+        <p>Eight games from the Northern Lights league, chosen so that a new viewer can see three different buildings and two different styles of play without driving more than an hour.</p>
+      </div>
+      <p class="meta" style="margin-bottom:.6rem">Scroll the table sideways on a phone. All times Central.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>November games, Northern Lights league.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Game</th>
+              <th scope="col">Where</th>
+              <th scope="col">How to watch</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Fri, Nov 6</td>
+              <td>Cedar Hollow Foxes vs Northside Ravens</td>
+              <td>Ice Barn, Cedar Hollow</td>
+              <td>In person, $14 · Puckline live</td>
+            </tr>
+            <tr>
+              <td>Sat, Nov 7</td>
+              <td>Riverside Owls vs Larkspur Union</td>
+              <td>Twin Rinks, Riverside</td>
+              <td>In person, $11 · Puckline live</td>
+            </tr>
+            <tr>
+              <td>Sun, Nov 8</td>
+              <td>Harbor Point Sirens vs Millbrook Cardinals</td>
+              <td>Dock Street Rink, Harbor Point</td>
+              <td>Puckline live · free replay Monday</td>
+            </tr>
+            <tr>
+              <td>Wed, Nov 11</td>
+              <td>Northside Ravens vs Riverside Owls</td>
+              <td>Ravens Nest Arena, Northside</td>
+              <td>Puckline live</td>
+            </tr>
+            <tr>
+              <td>Fri, Nov 13</td>
+              <td>Cedar Hollow Foxes vs Harbor Point Sirens</td>
+              <td>Ice Barn, Cedar Hollow</td>
+              <td>In person, $16 · Puckline live</td>
+            </tr>
+            <tr>
+              <td>Sat, Nov 14</td>
+              <td>Millbrook Cardinals vs Larkspur Union</td>
+              <td>Cardinal Rink, Millbrook</td>
+              <td>Puckline live · Icebox TV replay</td>
+            </tr>
+            <tr>
+              <td>Fri, Nov 20</td>
+              <td>Riverside Owls vs Cedar Hollow Foxes</td>
+              <td>Twin Rinks, Riverside</td>
+              <td>In person, $15 · Puckline live · diner watch party</td>
+            </tr>
+            <tr>
+              <td>Sun, Nov 22</td>
+              <td>Larkspur Union vs Harbor Point Sirens</td>
+              <td>Union Ice Works, Larkspur</td>
+              <td>Puckline live</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="callout">
+        <h2>If you only watch one game this month</h2>
+        <p>Make it Friday, November 20 at Twin Rinks. It is the first game of the Lantern Cup, the Owls have the best goaltender in the league, and the Foxes will spend sixty minutes trying to prove that does not matter. Tickets are fifteen dollars, the building holds twenty-two hundred people, and the last time these two met in November it went to a shootout.</p>
+        <p style="margin-bottom:0">If you cannot get there, the diner shows it with the sound on, and we will have a plain-language recap up by Saturday morning.</p>
+      </div>
+      <blockquote class="quote">
+        <p>The first game I watched on a screen, I had the sound off and the rules page open. I learned more in twenty minutes than in a season of highlight clips.</p>
+        <footer>Priya Raman, viewing editor</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Before the puck drops</h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>Know the two big calls</h3>
+          <p>Offside and icing are the only rules you need for your first month. Both fit in a paragraph.</p>
+          <a class="card-link" href="rules.html">Read the rules</a>
+        </article>
+        <article class="card">
+          <h3>Pick someone to root for</h3>
+          <p>Six clubs, three players worth following, and a five-minute weekly routine that keeps you current.</p>
+          <a class="card-link" href="teams.html">Teams &amp; follows</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">RR</span>
+        <span class="brand-text">
+          <span class="brand-name">Rink Ready</span>
+          <span class="brand-tag">Women's hockey, explained</span>
+        </span>
+      </a>
+      <p>A free, volunteer-run guide to the women's game. No advertising from teams or leagues, and we don't sell your email address to anyone.</p>
+      <p>Questions, corrections, or a rule we got wrong? Write to <a href="mailto:hello@rinkready.example">hello@rinkready.example</a>.</p>
+    </div>
+    <div>
+      <h2>Pages</h2>
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rules.html">The rules, in plain language</a></li>
+        <li><a href="watch.html">Where to watch</a></li>
+        <li><a href="teams.html">Teams &amp; follows</a></li>
+      </ul>
+    </div>
+    <p class="footer-notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
+  </div>
+</footer>
+
 </body>
 </html>
