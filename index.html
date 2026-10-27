@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Her Rink — A Beginner’s Hockey Guide</title>
+  <meta name="description" content="A fictional educational guide for women discovering hockey rules, games, teams, and community.">
+  <style>
+    :root { --ink:#182b30; --paper:#f7faf9; --teal:#086761; --rose:#a93150; --line:#c7d9d5; --soft:#e7f1ee; --white:#fff; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:1rem/1.65 Arial, sans-serif; }
+    a { color:var(--teal); text-underline-offset:.2em; }
+    a:focus-visible { outline:3px solid var(--rose); outline-offset:4px; }
+    .skip { position:absolute; left:1rem; top:-5rem; padding:.5rem; background:var(--white); }
+    .skip:focus { top:1rem; }
+    .notice { margin:0; padding:1rem; background:var(--soft); font-size:.875rem; text-align:center; }
+    .wrap { width:min(100% - 2rem, 68rem); margin:auto; }
+    header { border-bottom:1px solid var(--line); }
+    .header { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; padding:1.25rem 0; }
+    .brand { font-size:1.75rem; font-weight:800; text-decoration:none; }
+    nav { display:flex; flex-wrap:wrap; gap:.35rem .75rem; }
+    nav a { padding:.5rem .25rem; font-weight:700; }
+    nav a[aria-current="page"] { color:var(--rose); text-decoration-thickness:3px; }
+    main { padding:3rem 0; }
+    h1,h2,h3 { line-height:1.2; overflow-wrap:break-word; }
+    h1 { font-size:2.75rem; margin:.5rem 0 1rem; }
+    h2 { font-size:1.65rem; margin:0 0 1rem; }
+    h3 { font-size:1.2rem; margin:0 0 .5rem; }
+    p { max-width:70ch; }
+    .eyebrow { color:var(--rose); font-weight:700; }
+    .lead { font-size:1.2rem; }
+    .actions { display:flex; flex-wrap:wrap; gap:1rem; margin:1.5rem 0; }
+    .button { display:inline-block; padding:.75rem 1rem; border-radius:6px; background:var(--teal); color:var(--white); font-weight:700; text-decoration:none; }
+    section { margin-top:3rem; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr)); gap:1.25rem; }
+    .card { padding:1.5rem; background:var(--white); border:1px solid var(--line); border-radius:8px; }
+    .card p:last-child { margin-bottom:0; }
+    li { margin:.5rem 0; }
+    footer { border-top:1px solid var(--line); }
+    .footer { padding:1.5rem 0; }
+    @media(max-width:40rem) { h1 { font-size:2rem; } main { padding:2rem 0; } .header { align-items:flex-start; flex-direction:column; } section { margin-top:2rem; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <p class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
+  <header>
+    <div class="wrap header">
+      <a class="brand" href="index.html">Her Rink</a>
+      <nav aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="rules.html">Hockey Rules</a>
+        <a href="watch.html">Where to Watch</a>
+        <a href="teams.html">Teams &amp; Follows</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="wrap">
+    <p class="eyebrow">Hockey curiosity belongs here.</p>
+    <h1>Her Rink</h1>
+    <p class="lead">A welcoming starting point for women learning hockey, one faceoff, favorite player, and game night at a time.</p>
+    <p>You do not need to have played, own a jersey, or know every rule to enjoy hockey. Start with what interests you: the speed, the teamwork, the rivalries, or the women making their mark on the ice.</p>
+    <div class="actions">
+      <a class="button" href="rules.html">Learn the basics</a>
+      <a class="button" href="watch.html">Find your next game</a>
+    </div>
+    <section aria-labelledby="start">
+      <h2 id="start">Your first three stops</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Understand the whistle</h3>
+          <p>Learn what offsides, icing, and penalties mean, plus how NHL and PWHL games compare.</p>
+          <a href="rules.html">Explore hockey rules</a>
+        </article>
+        <article class="card">
+          <h3>Make it a game night</h3>
+          <p>Find official viewing information, avoid blackout surprises, and feel prepared for your first arena visit.</p>
+          <a href="watch.html">See where to watch</a>
+        </article>
+        <article class="card">
+          <h3>Find your hockey people</h3>
+          <p>Choose a team without pressure and build a feed full of highlights, explanations, and women’s hockey.</p>
+          <a href="teams.html">Discover teams and follows</a>
+        </article>
+      </div>
+    </section>
+    <section aria-labelledby="editors">
+      <h2 id="editors">Meet our fictional editors</h2>
+      <p>Her Rink and its editors are invented for this class project. The hockey explanations describe the real sport.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>Maya Bennett · The rule translator</h3>
+          <p>Maya became a fan after watching a playoff game with her roommate. She turns confusing whistles into everyday explanations.</p>
+        </article>
+        <article class="card">
+          <h3>Elena Brooks · The game-night planner</h3>
+          <p>Elena loves women’s hockey and the atmosphere of a crowded rink. Her favorite advice: bring a layer and ask the question.</p>
+        </article>
+      </div>
+    </section>
+    <section aria-labelledby="first">
+      <h2 id="first">One small goal for your first game</h2>
+      <p>Notice when possession changes, watch how players pass into open space, and pick one player to follow during a shift. Understanding everything can wait. Enjoying the game cannot.</p>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap footer">
+      <p><strong>Her Rink</strong> · A place to begin, not a test to pass.</p>
+      <nav aria-label="Footer navigation">
+        <a href="index.html">Home</a><a href="rules.html">Hockey Rules</a><a href="watch.html">Where to Watch</a><a href="teams.html">Teams &amp; Follows</a>
+      </nav>
+    </div>
+    <p class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
+  </footer>
+</body>
+</html>
