@@ -1,118 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hockey Teams &amp; Follows — Her Rink</title>
-  <meta name="description" content="Choose an NHL or PWHL team, discover official hockey accounts, and find welcoming ways to join the community.">
-  <style>
-    :root { --ink:#182b30; --paper:#f7faf9; --teal:#086761; --rose:#a93150; --line:#c7d9d5; --soft:#e7f1ee; --white:#fff; }
-    * { box-sizing:border-box; }
-    body { margin:0; background:var(--paper); color:var(--ink); font:1rem/1.65 Arial, sans-serif; }
-    a { color:var(--teal); text-underline-offset:.2em; }
-    a:focus-visible { outline:3px solid var(--rose); outline-offset:4px; }
-    .skip { position:absolute; left:1rem; top:-5rem; padding:.5rem; background:var(--white); }
-    .skip:focus { top:1rem; }
-    .notice { margin:0; padding:1rem; background:var(--soft); font-size:.875rem; text-align:center; }
-    .wrap { width:min(100% - 2rem, 68rem); margin:auto; }
-    header { border-bottom:1px solid var(--line); }
-    .header { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; padding:1.25rem 0; }
-    .brand { font-size:1.75rem; font-weight:800; text-decoration:none; }
-    nav { display:flex; flex-wrap:wrap; gap:.35rem .75rem; }
-    nav a { padding:.5rem .25rem; font-weight:700; }
-    nav a[aria-current="page"] { color:var(--rose); text-decoration-thickness:3px; }
-    main { padding:3rem 0; }
-    h1,h2,h3 { line-height:1.2; overflow-wrap:break-word; }
-    h1 { font-size:2.75rem; margin:.5rem 0 1rem; }
-    h2 { font-size:1.65rem; margin:0 0 1rem; }
-    h3 { font-size:1.2rem; margin:0 0 .5rem; }
-    p { max-width:70ch; }
-    .eyebrow { color:var(--rose); font-weight:700; }
-    .lead { font-size:1.2rem; }
-    section { margin-top:3rem; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr)); gap:1.25rem; }
-    .card { padding:1.5rem; background:var(--white); border:1px solid var(--line); border-radius:8px; }
-    .card p:last-child { margin-bottom:0; }
-    li { margin:.5rem 0; }
-    footer { border-top:1px solid var(--line); }
-    .footer { padding:1.5rem 0; }
-    @media(max-width:40rem) { h1 { font-size:2rem; } main { padding:2rem 0; } .header { align-items:flex-start; flex-direction:column; } section { margin-top:2rem; } }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teams &amp; follows — Rink Ready</title>
+<meta name="description" content="The six clubs of the Northern Lights Women's Hockey League, three players worth following, the league's best rivalry, and a five-minute weekly routine for keeping up.">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--ink:#0f1b26;--ink-2:#46565f;--ice:#f3f7f9;--paper:#ffffff;--line:#dbe4ea;--deep:#102a36;--accent:#b93a2b;--accent-dark:#93291d;--accent-2:#f8e8e4;--radius:16px;--wrap:70rem}
+html{-webkit-text-size-adjust:100%}
+body{display:flex;flex-direction:column;min-height:100vh;margin:0;background:var(--ice);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:clamp(1rem,.96rem + .2vw,1.0625rem);line-height:1.65}
+h1,h2,h3,h4{margin:0 0 .55em;line-height:1.12;letter-spacing:-.02em;font-weight:800}
+h1{font-size:clamp(2rem,1.4rem + 2.9vw,3.4rem);line-height:1.04}
+h2{font-size:clamp(1.45rem,1.2rem + 1.2vw,2.05rem)}
+h3{font-size:1.1rem;letter-spacing:-.01em}
+p{margin:0 0 1em}
+a{color:var(--accent);text-underline-offset:.18em}
+a:hover{color:var(--accent-dark)}
+img,svg{max-width:100%}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+main{flex:1}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:clamp(1.1rem,4vw,2.5rem)}
+.skip{position:absolute;left:-9999px;top:0;z-index:30;padding:.7rem 1rem;background:var(--paper);color:var(--ink);font-weight:700}
+.skip:focus{left:0}
+.notice{background:var(--deep);color:#e4eef3}
+.notice p{max-width:var(--wrap);margin:0 auto;padding:.62rem clamp(1.1rem,4vw,2.5rem);font-size:.76rem;line-height:1.5;letter-spacing:.01em;text-align:center}
+.masthead{background:var(--paper);border-bottom:1px solid var(--line)}
+.masthead .wrap{display:flex;flex-direction:column;gap:.85rem;padding-block:1rem}
+@media (min-width:52rem){.masthead .wrap{flex-direction:row;align-items:center;justify-content:space-between}}
+.brand{display:flex;align-items:center;gap:.7rem;color:inherit;text-decoration:none}
+.brand-mark{display:grid;place-items:center;flex:0 0 auto;width:2.4rem;height:2.4rem;border-radius:50%;background:var(--deep);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.08em}
+.brand-text{display:flex;flex-direction:column;line-height:1.15}
+.brand-name{font-size:.95rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.brand-tag{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
+.nav ul{display:flex;flex-wrap:wrap;gap:.35rem;margin:0;padding:0;list-style:none}
+.nav a{display:block;padding:.5rem .85rem;border:1px solid var(--line);border-radius:999px;background:#fbfdfe;color:var(--ink-2);font-size:.86rem;font-weight:600;text-decoration:none}
+.nav a:hover{background:var(--ice);border-color:#c2d0d9;color:var(--ink)}
+.nav a[aria-current="page"]{background:var(--deep);border-color:var(--deep);color:#fff}
+.hero{background:linear-gradient(180deg,#fff,var(--ice));border-bottom:1px solid var(--line);padding-block:clamp(2.1rem,5vw,3.8rem)}
+.hero .wrap{display:grid;gap:clamp(1.6rem,4vw,3rem);align-items:center}
+@media (min-width:56rem){.hero .wrap{grid-template-columns:1.12fr .88fr}}
+.hero-inner .wrap{display:block}
+.hero-inner h1{font-size:clamp(1.9rem,1.35rem + 2.3vw,2.9rem)}
+.eyebrow{margin:0 0 .9rem;font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.lede{max-width:46ch;font-size:clamp(1.04rem,1rem + .35vw,1.18rem);color:var(--ink-2)}
+.hero-inner .lede{max-width:64ch}
+.actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.6rem}
+.btn{display:inline-block;padding:.78rem 1.3rem;border:1px solid var(--accent);border-radius:999px;background:var(--accent);color:#fff;font-size:.93rem;font-weight:700;text-decoration:none}
+.btn:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}
+.btn.ghost{background:transparent;border-color:#bdcbd4;color:var(--ink)}
+.btn.ghost:hover{background:var(--paper);border-color:var(--ink-2);color:var(--ink)}
+.section{padding-block:clamp(2.1rem,4.5vw,3.4rem)}
+.section-head{max-width:60ch;margin-bottom:1.7rem}
+.section-head h2{margin-bottom:.4rem}
+.section-head p{margin:0;color:var(--ink-2)}
+.muted{color:var(--ink-2)}
+.meta{margin:0;font-size:.78rem;color:var(--ink-2)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(15.5rem,1fr));gap:1rem}
+.card{display:flex;flex-direction:column;padding:1.35rem;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius)}
+.card h3{margin-bottom:.35rem}
+.card p{font-size:.94rem;color:var(--ink-2)}
+.card-link{margin-top:auto;padding-top:.6rem;font-size:.88rem;font-weight:700;text-decoration:none}
+.card-link:hover{text-decoration:underline}
+.pill{display:inline-block;margin:0 0 .6rem;padding:.22rem .6rem;border-radius:999px;background:var(--accent-2);color:var(--accent-dark);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.briefs{display:grid;gap:1rem;margin:0;padding:0;list-style:none}
+.brief{padding:1.1rem 1.2rem;background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0}
+.brief h3{margin-bottom:.25rem;font-size:1rem}
+.brief p{margin:0 0 .4rem;font-size:.94rem;color:var(--ink-2)}
+.brief a{font-size:.88rem;font-weight:700}
+.facts{display:grid;gap:.85rem;margin:0}
+.facts div{padding:.9rem 1rem;background:var(--paper);border:1px solid var(--line);border-radius:12px}
+.facts dt{font-weight:800;font-size:.98rem}
+.facts dd{margin:.25rem 0 0;font-size:.92rem;color:var(--ink-2)}
+@media (min-width:48rem){.facts{grid-template-columns:repeat(2,1fr)}}
+.steps{display:grid;gap:.85rem;margin:0;padding:0;list-style:none;counter-reset:step}
+.steps li{counter-increment:step;position:relative;padding:1.05rem 1.2rem 1.05rem 3.2rem;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius)}
+.steps li::before{content:counter(step,decimal-leading-zero);position:absolute;left:1.15rem;top:1.02rem;font-size:.92rem;font-weight:800;color:var(--accent)}
+.steps strong{display:block;margin-bottom:.15rem}
+.steps span{font-size:.93rem;color:var(--ink-2)}
+.table-wrap{overflow-x:auto;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius)}
+table{width:100%;min-width:38rem;border-collapse:collapse;font-size:.92rem}
+caption{padding:.85rem 1rem;border-bottom:1px solid var(--line);color:var(--ink-2);font-size:.8rem;text-align:left}
+th,td{padding:.7rem 1rem;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:#f7fafb;color:var(--ink-2);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase}
+tbody tr:last-child td{border-bottom:0}
+td:first-child{font-weight:600}
+.jump{display:flex;flex-wrap:wrap;gap:.45rem;margin:1.5rem 0 0;padding:0;list-style:none}
+.jump a{display:block;padding:.4rem .75rem;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink-2);font-size:.8rem;font-weight:600;text-decoration:none}
+.jump a:hover{border-color:var(--ink-2);color:var(--ink)}
+.quote{margin:1.5rem 0 0;padding:1.3rem 1.5rem;background:var(--paper);border-left:4px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0;font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-style:italic;font-size:1.12rem;line-height:1.5}
+.quote p{margin:0}
+.quote footer{margin-top:.8rem;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-style:normal;font-size:.8rem;color:var(--ink-2)}
+.callout{padding:1.35rem;background:var(--accent-2);border:1px solid #eed3cc;border-radius:var(--radius)}
+.callout h2,.callout h3{color:#8d2a1e}
+.callout ul{margin:0;padding-left:1.1rem}
+.callout li{margin-bottom:.45rem;font-size:.94rem}
+.callout li:last-child{margin-bottom:0}
+.rink-figure{padding:1rem;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 20px 44px -34px rgba(16,42,54,.55)}
+figure{margin:0 0 1.5rem}
+figcaption{margin-top:.7rem;font-size:.78rem;color:var(--ink-2);text-align:center}
+.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1rem}
+.person{padding:1.2rem;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius)}
+.avatar{display:grid;place-items:center;width:2.6rem;height:2.6rem;margin:0 0 .75rem;border:1px solid var(--line);border-radius:50%;background:var(--ice);color:var(--deep);font-size:.82rem;font-weight:800}
+.person h3{margin-bottom:.1rem;font-size:1rem}
+.person .role{margin:0 0 .55rem;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.person p{margin:0;font-size:.92rem;color:var(--ink-2)}
+.person p + p{margin-top:.55rem}
+.site-footer{margin-top:auto;background:var(--deep);color:#c9dbe4}
+.site-footer .wrap{display:grid;gap:1.8rem;padding-block:clamp(2rem,4vw,3rem)}
+@media (min-width:52rem){.site-footer .wrap{grid-template-columns:1.3fr 1fr}}
+.site-footer h2{margin-bottom:.7rem;color:#fff;font-size:.72rem;letter-spacing:.18em}
+.site-footer p{margin:0 0 .7rem;font-size:.9rem;color:#b3c8d3}
+.site-footer a{color:#fff}
+.site-footer .brand-name{color:#fff}
+.site-footer .brand-tag{color:#9fb8c5}
+.footer-nav{display:grid;gap:.4rem;margin:0;padding:0;list-style:none;font-size:.92rem}
+.footer-nav a{text-decoration:none}
+.footer-nav a:hover{text-decoration:underline}
+.footer-notice{grid-column:1/-1;margin:0;padding-top:1.3rem;border-top:1px solid rgba(255,255,255,.18);font-size:.76rem;line-height:1.6;color:#a6bfcb}
+</style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <p class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
-  <header>
-    <div class="wrap header">
-      <a class="brand" href="index.html">Her Rink</a>
-      <nav aria-label="Main navigation">
-        <a href="index.html">Home</a><a href="rules.html">Hockey Rules</a><a href="watch.html">Where to Watch</a><a href="teams.html" aria-current="page">Teams &amp; Follows</a>
-      </nav>
-    </div>
-  </header>
-  <main id="main" class="wrap">
-    <p class="eyebrow">Find a team. Keep your curiosity.</p>
-    <h1>Teams &amp; Follows</h1>
-    <p class="lead">Your favorite team does not need a complicated origin story. A city, a player, or a jersey you love is enough.</p>
-    <section aria-labelledby="choose">
-      <h2 id="choose">Three ways to choose</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Start with a place</h3>
-          <p>Try a team near your home, campus, or a city you love. Local coverage and nearby fans can make following the season easier.</p>
-        </article>
-        <article class="card">
-          <h3>Start with a player</h3>
-          <p>Watch highlights and interviews. A creative passer, fearless goalie, or leader with a story you connect to can become your reason to tune in.</p>
-        </article>
-        <article class="card">
-          <h3>Start with a game</h3>
-          <p>Watch two teams without choosing a side. Notice whose style draws you in. You can follow more than one team and change your mind.</p>
-        </article>
-      </div>
-    </section>
-    <section aria-labelledby="leagues">
-      <h2 id="leagues">Explore both leagues</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Meet NHL teams</h3>
-          <p>The NHL includes teams across the United States and Canada. Browse its official team directory for club websites, rosters, and schedules.</p>
-          <p>Try comparing one nearby team with one whose players interest you. You do not need to memorize the whole league.</p>
-          <a href="https://www.nhl.com/info/teams">Explore the NHL team directory</a>
-        </article>
-        <article class="card">
-          <h3>Discover the PWHL</h3>
-          <p>The PWHL showcases elite professional women’s hockey. Explore its current teams, player profiles, and highlights through the league’s official website.</p>
-          <p>Pay attention to the players’ stories as well as the scores. Following women athletes can make the sport feel more connected to your own interests.</p>
-          <a href="https://www.thepwhl.com/">Explore the PWHL</a>
-        </article>
-      </div>
-    </section>
-    <section aria-labelledby="feed">
-      <h2 id="feed">Build a hockey feed worth opening</h2>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="notice" role="note">
+  <p>This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">RR</span>
+      <span class="brand-text">
+        <span class="brand-name">Rink Ready</span>
+        <span class="brand-tag">Women's hockey, explained</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
       <ul>
-        <li><strong>One league account:</strong> Use social links from the NHL or PWHL official website to find authentic announcements and highlights.</li>
-        <li><strong>One team account:</strong> Follow your chosen club for lineups, game updates, and behind-the-scenes moments.</li>
-        <li><strong>One player:</strong> Look for a profile linked by the player’s team or league rather than trusting a similar username.</li>
-        <li><strong>One thoughtful explainer:</strong> Choose a writer or creator who cites sources, explains mistakes, and welcomes beginner questions.</li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rules.html">Rules</a></li>
+        <li><a href="watch.html">Where to Watch</a></li>
+        <li><a href="teams.html" aria-current="page">Teams &amp; Follows</a></li>
       </ul>
-      <p>League and team links above lead to real organizations. Her Rink is a fictional class project and is not affiliated with or endorsed by them.</p>
-    </section>
-    <section aria-labelledby="community">
-      <h2 id="community">A community should make room for you</h2>
-      <p>Look for fan groups with clear conduct rules and active moderation. You should be able to ask what icing means without being mocked. Leave spaces that gatekeep, harass, or pressure you to share personal information.</p>
-      <p>Interested in playing? Ask a local rink about adult beginner sessions, women’s programs, equipment requirements, and rental options. Availability and costs vary, so check before signing up.</p>
-      <p>Your next step can be small: <a href="watch.html">pick one game</a>, invite a friend, and see what catches your attention.</p>
-    </section>
-  </main>
-  <footer>
-    <div class="wrap footer">
-      <p><strong>Her Rink</strong> · A place to begin, not a test to pass.</p>
-      <nav aria-label="Footer navigation">
-        <a href="index.html">Home</a><a href="rules.html">Hockey Rules</a><a href="watch.html">Where to Watch</a><a href="teams.html">Teams &amp; Follows</a>
-      </nav>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero hero-inner">
+    <div class="wrap">
+      <p class="eyebrow">Teams &amp; follows</p>
+      <h1>Six teams, three players, and a habit that takes five minutes.</h1>
+      <p class="lede">The Northern Lights Women's Hockey League is small on purpose: six clubs, a 24-game season, and rinks you can drive to on a weeknight. Here is who plays, who to watch, and how to keep up without letting hockey take over your evenings.</p>
+      <ul class="jump">
+        <li><a href="#league">The league</a></li>
+        <li><a href="#clubs">The six clubs</a></li>
+        <li><a href="#players">Three players</a></li>
+        <li><a href="#routine">A five-minute routine</a></li>
+        <li><a href="#rivalry">The rivalry</a></li>
+      </ul>
     </div>
-    <p class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
-  </footer>
+  </section>
+
+  <section class="section" id="league">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>The league at a glance</h2>
+        <p>Founded in 2014 by two rink managers who were tired of driving four hours for a game.</p>
+      </div>
+      <p>The Northern Lights league started with four clubs playing a twelve-game season in borrowed ice time. Twelve years later it has six, a full schedule, and a waiting list of cities that want in. What has not changed is the scale: the biggest building in the league seats twenty-two hundred people, the smallest seats eight hundred, and on a Friday night in February you can hear a single voice from the far end of the rink.</p>
+      <p>Most players are paid, most of them part-time, and most of them have another job. There are teachers and nurses in this league, a welder, two graduate students and a pastry chef who is, by every account, the fastest skater in the league. That is part of the appeal: these are people you might stand behind in a grocery line on Monday.</p>
+      <div class="facts">
+        <div>
+          <dt>Six clubs</dt>
+          <dd>Two in the north corridor, two along the river, two on the harbor side. No road trip in the league is longer than ninety minutes.</dd>
+        </div>
+        <div>
+          <dt>A 24-game season</dt>
+          <dd>October to March, with four games against each rival. Playoffs are a four-team bracket in the last week of March.</dd>
+        </div>
+        <div>
+          <dt>Ticket prices</dt>
+          <dd>Nine to sixteen dollars, general admission, sold at the door. Nobody in this league has ever needed a presale code.</dd>
+        </div>
+        <div>
+          <dt>One sheet of ice per rink</dt>
+          <dd>Which means the zamboni is the most important employee in the building, and the schedule bends around it.</dd>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="clubs" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>The six clubs</h2>
+        <p>Each club has one thing it is known for. None of them will admit to the description, which is how you know it is accurate.</p>
+      </div>
+      <p class="meta" style="margin-bottom:.6rem">Scroll the table sideways on a phone.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>Home rinks and how each club keeps in touch.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Club</th>
+              <th scope="col">Home rink</th>
+              <th scope="col">Colors</th>
+              <th scope="col">Known for</th>
+              <th scope="col">How to follow</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cedar Hollow Foxes</td>
+              <td>Ice Barn, Cedar Hollow</td>
+              <td>Deep green and gold</td>
+              <td>The fastest first period in the league. The forecheck does not stop and neither does the crowd.</td>
+              <td>Foxes Dispatch, a Tuesday email</td>
+            </tr>
+            <tr>
+              <td>Northside Ravens</td>
+              <td>Ravens Nest Arena, Northside</td>
+              <td>Black and rust</td>
+              <td>Grinding, low-scoring hockey. Extremely difficult to play against and entirely unbothered by that.</td>
+              <td>The pregame letter, sent on game days</td>
+            </tr>
+            <tr>
+              <td>Riverside Owls</td>
+              <td>Twin Rinks, Riverside</td>
+              <td>Navy and silver</td>
+              <td>The best goaltending in the league, and a team that knows it. Most games finish 2-1.</td>
+              <td>Owls gameday text line</td>
+            </tr>
+            <tr>
+              <td>Larkspur Union</td>
+              <td>Union Ice Works, Larkspur</td>
+              <td>Maroon and cream</td>
+              <td>The youngest roster in the league. They will out-skate you in the third period, and they know it.</td>
+              <td>Union notes, every Friday</td>
+            </tr>
+            <tr>
+              <td>Harbor Point Sirens</td>
+              <td>Dock Street Rink, Harbor Point</td>
+              <td>Teal and white</td>
+              <td>The loudest building in the league, and a power play you can hear from the parking lot.</td>
+              <td>Sirens matchday email</td>
+            </tr>
+            <tr>
+              <td>Millbrook Cardinals</td>
+              <td>Cardinal Rink, Millbrook</td>
+              <td>Red and grey</td>
+              <td>Patient, defensive, and somehow always within one goal with five minutes left.</td>
+              <td>Sunday recap, week by week</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="players" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Three players worth following</h2>
+        <p>Not the leading scorers, necessarily. The three we would tell a new fan to watch first, with one thing to look for in each.</p>
+      </div>
+      <div class="people">
+        <article class="person">
+          <p class="avatar" aria-hidden="true">NA</p>
+          <h3>Nell Abara</h3>
+          <p class="role">Center, 24 · Cedar Hollow Foxes</p>
+          <p>Leads the league in assists and in post-whistle conversation. She is not the quickest player on the ice, and that is the point: she slows down a half-step before every pass, which is why her wingers always look open.</p>
+          <p><strong>Watch for:</strong> her first three strides off a face-off. She wins the puck forward and the whole shift changes direction.</p>
+        </article>
+        <article class="person">
+          <p class="avatar" aria-hidden="true">JK</p>
+          <h3>Jo Kessler</h3>
+          <p class="role">Goaltender, 29 · Riverside Owls</p>
+          <p>A former college backup who became the most patient goalie in the league. She plays deep in her crease, stays on her feet, and lets the shooter make the first mistake. Her save percentage has never been the best in the league; her team's record always is.</p>
+          <p><strong>Watch for:</strong> her glove hand, and how rarely she commits to the ice before the shot arrives.</p>
+        </article>
+        <article class="person">
+          <p class="avatar" aria-hidden="true">SI</p>
+          <h3>Sasha Ilic</h3>
+          <p class="role">Defense, 21 · Larkspur Union</p>
+          <p>The youngest player in the league and already running the first power-play unit. She skates the puck out of trouble instead of passing it, which terrifies her coach and delights everyone else in the building.</p>
+          <p><strong>Watch for:</strong> her zone exits. When she gets the puck behind her own net, the next ten seconds are usually worth watching.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="routine" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How to follow the league without doomscrolling</h2>
+        <p>Four small habits. None of them requires an app, a notification, or a second screen during dinner.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <strong>One email.</strong>
+          <span>Pick a single club's newsletter. Tuesday mornings, five minutes, done. You will know the injury news, the standings and the one storyline everyone is arguing about.</span>
+        </li>
+        <li>
+          <strong>One podcast.</strong>
+          <span>"Between the Pipes" runs about twenty minutes after every Foxes home game: two volunteers, a phone, and an honest argument about the second period. It is the least polished and most useful hockey show we know.</span>
+        </li>
+        <li>
+          <strong>One page.</strong>
+          <span>Bookmark the league's Sunday results page and check it once a week. That is the entire routine. You do not need to watch every game to follow a season.</span>
+        </li>
+        <li>
+          <strong>One rule for yourself.</strong>
+          <span>Do not follow players you do not actually enjoy watching. There is no prize for being early, and no penalty for missing a Tuesday in January.</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Pick a team in five questions</h2>
+        <p>No quiz, no form. Find the sentence that sounds like you and follow the club next to it.</p>
+      </div>
+      <dl class="facts">
+        <div>
+          <dt>You like a team that makes you nervous</dt>
+          <dd>Northside Ravens. Every game is 2-1 and every game is decided in the last four minutes.</dd>
+        </div>
+        <div>
+          <dt>You want to watch the best goalie in the league</dt>
+          <dd>Riverside Owls. Jo Kessler alone is worth the eleven-dollar ticket.</dd>
+        </div>
+        <div>
+          <dt>You are bringing someone who has never seen a game</dt>
+          <dd>Cedar Hollow Foxes. Fast, loud, and forgiving of confusion — there is always another goal coming.</dd>
+        </div>
+        <div>
+          <dt>You like an underdog with a young roster</dt>
+          <dd>Larkspur Union. The youngest team in the league, and the most fun to watch lose a game 5-4.</dd>
+        </div>
+        <div>
+          <dt>You want the cheapest ticket and the loudest room</dt>
+          <dd>Harbor Point Sirens. Nine dollars at the door and a building that behaves like a playoff game in November.</dd>
+        </div>
+        <div>
+          <dt>You enjoy a defensive chess match</dt>
+          <dd>Millbrook Cardinals. Two passes, a trap, and forty minutes of patience.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="rivalry" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>The rivalry you will hear about first</h2>
+      </div>
+      <p>Cedar Hollow and Northside have played for the Lantern Cup since 2016, when a power failure at the Ice Barn left the building lit only by the emergency lights and one brass lantern that a maintenance worker had brought in for the storm. The game finished. Nobody could see the clock. The two clubs have played for a lantern ever since, and the current one is dented from a celebration that got out of hand in 2021.</p>
+      <p>They meet four times a season, and the November meeting is usually the one that tells you how the winter will go. Cedar Hollow wants to skate; Northside wants to make skating miserable. The games are close because neither team is willing to be the first to change.</p>
+      <p>There is also the Twin Rinks doubleheader in January, when Riverside and Larkspur play back-to-back on the same sheet of ice with a forty-minute zamboni break in between. It is the best value in the league: two games, one ticket, and a concession stand that runs out of coffee by the second intermission.</p>
+      <blockquote class="quote">
+        <p>Pick a team with a rink you can actually get to on a Tuesday. The game is better in the building than on any screen.</p>
+        <footer>Tess Lindqvist, teams editor</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="callout">
+        <h3>Before you pick a side</h3>
+        <ul>
+          <li>You do not have to choose a team to enjoy the league. Plenty of our readers just watch good hockey and go home.</li>
+          <li>If you do choose, choose by rink first. A team forty minutes away is a team you will actually see play.</li>
+          <li>Buy the cheapest ticket. In a building this size, there is not a bad seat, only a different view of the same play.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Still deciding?</h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>Watch a game first</h3>
+          <p>Eight games in November, three rinks, and one diner that shows the Friday game with the sound on.</p>
+          <a class="card-link" href="watch.html">Where to watch</a>
+        </article>
+        <article class="card">
+          <h3>Learn the two big calls</h3>
+          <p>Offside and icing, plus a glossary you can keep open during a broadcast.</p>
+          <a class="card-link" href="rules.html">Read the rules</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">RR</span>
+        <span class="brand-text">
+          <span class="brand-name">Rink Ready</span>
+          <span class="brand-tag">Women's hockey, explained</span>
+        </span>
+      </a>
+      <p>A free, volunteer-run guide to the women's game. No advertising from teams or leagues, and we don't sell your email address to anyone.</p>
+      <p>Questions, corrections, or a rule we got wrong? Write to <a href="mailto:hello@rinkready.example">hello@rinkready.example</a>.</p>
+    </div>
+    <div>
+      <h2>Pages</h2>
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rules.html">The rules, in plain language</a></li>
+        <li><a href="watch.html">Where to watch</a></li>
+        <li><a href="teams.html">Teams &amp; follows</a></li>
+      </ul>
+    </div>
+    <p class="footer-notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
+  </div>
+</footer>
+
 </body>
 </html>
