@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://savvleebrown-oss.github.io/rink-ready/sitemap.xml
